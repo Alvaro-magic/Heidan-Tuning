@@ -45,7 +45,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(images/FondoHeader.png);
+    background-image: url(../images/FondoHeader.png);
     background-position: center;
 }
 
@@ -170,7 +170,7 @@ nav a:hover {
 
 body{
     background-color: var(--Negro);
-    background-image: url(images/Pandilleros.PNG);
+    background-image: url(../images/Pandilleros.PNG);
     background-size: 100%;
 }
 
