@@ -1,0 +1,346 @@
+    /* ##Fuente De Letra## */
+
+    @import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Honk&family=Jersey+15&family=Permanent+Marker&family=Pirata+One&display=swap');
+
+    /* ##Fin De Fuente De Letra## */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    /* ##Colores## */
+
+:root{
+    --Morado: #6A0DAD;
+    --Moradoclaro: #933dd0;
+    --Negro: #000000;
+    --DoradoMetalico: #D4AF37;
+    --GrisOscuro: #2E2E2E;
+    --sombra: #0000008c;
+    --inside: #101010;
+    --RojoOscuro: #800000;
+    --Blanco: white;
+    --RojoTitulo: #f64f59;
+    --Transparente: rgb(255,255,255, 0);
+    --GrisGaleria: rgb(171, 171, 171);
+}
+
+    /* ##Fin De Colores## */
+
+    /* ##HTML## */
+
+html{
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scrollbar-color: var(--DoradoMetalico) var(--Morado);
+}
+
+    /*##Fin Del HTML## */
+
+    /* ##Header## */
+
+header{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/FondoHeader.png);
+    background-position: center;
+}
+
+.titulo{
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10.95vh;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--Negro);
+    color: var(--DoradoMetalico);
+    background-image: linear-gradient(-250deg, var(--DoradoMetalico) 0%, var(--Morado) 50%, var(--RojoTitulo) 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bgText 3s linear infinite;
+    font-size: 8.8vh;
+}
+
+@keyframes bgText{
+    to{
+        background-position: 200% center;
+    }
+}
+
+    /* ##Fin Del Header## */
+
+    /* ##Nav## */
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    background-color: var(--Negro);
+    color: var(--Blanco);
+}
+
+.menu-horizontal{
+    display: flex;
+    list-style: none;
+}
+
+.menu-vertical{
+    border-radius: 2vh;
+    position: absolute;
+    display: none;
+    text-align: center;
+    list-style: none;
+    margin-top: 1.5vh;
+    height: 20vh;
+    width: 12vw;
+    background-color: rgb(0, 0, 0, .5);
+}
+
+.reparacion-vertical{
+    margin-top: 4vh;
+}
+
+.tuning-vertical{
+    margin-top: 4.5vh;
+}
+
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+
+nav a{
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 2vh 2.5vh;
+    color: var(--DoradoMetalico);
+    position: relative;
+    text-decoration: none;
+    font-size: 4.1vh;
+}
+
+nav a::before,
+nav a::after {
+  content: '';
+  height: 1.91vh;
+  width: 0.91vw;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+nav a::before {
+    content: '';
+    right: 0;
+    top: 0;
+    border-top: 0.41vh solid var(--Morado);
+    border-right: 0.2vw solid var(--Morado);
+    transform: translate(-100%, 50%);
+}
+
+nav a:after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    border-bottom: 0.41vh solid var(--Morado);
+    border-left: 0.2vw solid var(--Morado);
+    transform: translate(100%, -50%)
+}
+
+nav a:hover:before,
+nav a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+nav a:hover {
+    color: var(--Morado);
+}
+
+    /* ##Fin Del Nav## */
+   /* ##Body## */
+
+body{
+    background-color: var(--Negro);
+    background-image: url(/images/Pandilleros.PNG);
+    background-size: 100%;
+}
+
+main{
+    height: 70vh;
+}
+
+    /* ##Formulario## */
+
+form {
+    max-width: 1250px;
+    margin: auto;
+    margin-top: 5vh;
+    padding: 15px;
+    border: 5px solid var(--DoradoMetalico);
+    border-radius: 5px;
+    background: var(--Negro);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 2vh;
+    text-align: center;
+    width: 100%;
+    font-size: 5vh;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.nombre{
+    width: 20vw;
+}
+
+.numero{
+    width: 29.2vw;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--Blanco);
+}
+
+input, textarea, button {
+    background-color: var(--Moradoclaro);
+    width: 95%;
+    padding: 8px;
+    border: 3px solid var(--DoradoMetalico);
+    border-radius: 4px;
+}
+
+input, textarea{
+    color: var(--Blanco);
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vh;
+}
+
+input::placeholder{
+    color: var(--DoradoMetalico);
+}
+
+textarea {
+    resize: none;
+}
+
+textarea::placeholder{
+    color: var(--DoradoMetalico);
+}
+
+button {
+    background-color: var(--Moradoclaro);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--Morado);
+}
+
+    /* ##Fin De Formulario## */
+
+    /* ##Fin Del Body## */
+
+    /* ##Footer## */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: var(--Negro);
+    color: var(--Blanco);
+}
+
+    /* ##Fin Del Footer## */
+
+@media (max-width: 768px) {
+    header{
+        height: 15vh;
+    }
+    .titulo {
+        font-size: 5vh; /* Reduce el tamaño del título principal */
+    }
+
+    nav {
+        flex-direction: column; /* Reorganiza la navegación */
+        height: auto;
+    }
+
+    nav a {
+        font-size: 3vh; /* Ajusta el tamaño del texto en los enlaces de navegación */
+        padding: 1vh;
+    }
+
+    .menu-vertical{
+        height: 20vh;
+        width: 30vw;
+    }
+
+    main{
+        height: 115vh;
+    }
+
+    form {
+        max-width: 90%; /* Reduce el ancho del formulario */
+        margin: 4vh auto; /* Añade un margen superior para más espacio */
+        padding: 10px; /* Reduce el relleno */
+    }
+
+    form h1 {
+        font-size: 4vh; /* Ajusta el tamaño del título del formulario */
+    }
+
+    input, textarea, button {
+        font-size: 2.5vh; /* Reduce el tamaño del texto en los campos */
+    }
+
+    .form-row {
+        flex-direction: column; /* Cambia a una disposición en columna */
+        gap: 20px; /* Reduce el espacio entre campos */
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        background-color: var(--Negro);
+        color: var(--Blanco);
+    }
+}

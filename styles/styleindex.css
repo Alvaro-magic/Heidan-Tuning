@@ -1,0 +1,559 @@
+    /* ##Fuente De Letra## */
+
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Honk&family=Jersey+15&family=Permanent+Marker&family=Pirata+One&display=swap');
+
+    /* ##Fin De Fuente De Letra## */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+    /* ##Colores## */
+
+:root{
+    --Morado: #6A0DAD;
+    --Moradoclaro: #933dd0;
+    --Negro: #000000;
+    --DoradoMetalico: #D4AF37;
+    --GrisOscuro: #2E2E2E;
+    --sombra: #0000008c;
+    --inside: #101010;
+    --RojoOscuro: #800000;
+    --Blanco: white;
+    --RojoTitulo: #f64f59;
+    --Transparente: rgb(255,255,255, 0);
+    --GrisGaleria: rgb(171, 171, 171);
+}
+
+    /* ##Fin De Colores## */
+
+    /* ##HTML## */
+
+html{
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scrollbar-color: var(--DoradoMetalico) var(--Morado);
+}
+
+    /*##Fin Del HTML## */
+
+    /* ##Header## */
+
+header{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/FondoHeader.png);
+    background-position: center;
+}
+
+.titulo{
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10.95vh;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--Negro);
+    color: var(--DoradoMetalico);
+    background-image: linear-gradient(-250deg, var(--DoradoMetalico) 0%, var(--Morado) 50%, var(--RojoTitulo) 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bgText 3s linear infinite;
+    font-size: 8.8vh;
+}
+
+@keyframes bgText{
+    to{
+        background-position: 200% center;
+    }
+}
+
+    /* ##Fin Del Header## */
+
+    /* ##Nav## */
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    background-color: var(--Negro);
+    color: var(--Blanco);
+}
+
+.menu-horizontal{
+    display: flex;
+    list-style: none;
+}
+
+.menu-vertical{
+    border-radius: 2vh;
+    position: absolute;
+    display: none;
+    text-align: center;
+    list-style: none;
+    margin-top: 1.5vh;
+    height: 20vh;
+    width: 12vw;
+    background-color: rgb(0, 0, 0, .5);
+}
+
+.reparacion-vertical{
+    margin-top: 4vh;
+}
+
+.tuning-vertical{
+    margin-top: 4.5vh;
+}
+
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+
+nav a{
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 2vh 2.5vh;
+    color: var(--DoradoMetalico);
+    position: relative;
+    text-decoration: none;
+    font-size: 4.1vh;
+}
+
+nav a::before,
+nav a::after {
+  content: '';
+  height: 1.91vh;
+  width: 0.91vw;
+  position: absolute;
+  transition: all .35s ease;
+  opacity: 0;
+}
+
+nav a::before {
+    content: '';
+    right: 0;
+    top: 0;
+    border-top: 0.41vh solid var(--Morado);
+    border-right: 0.2vw solid var(--Morado);
+    transform: translate(-100%, 50%);
+}
+
+nav a:after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    border-bottom: 0.41vh solid var(--Morado);
+    border-left: 0.2vw solid var(--Morado);
+    transform: translate(100%, -50%)
+}
+
+nav a:hover:before,
+nav a:hover:after{
+  transform: translate(0,0);
+  opacity: 1;
+}
+
+nav a:hover {
+    color: var(--Morado);
+}
+
+    /* ##Fin Del Nav## */
+
+    /* ##Body## */
+
+body{
+    background-color: var(--Negro);
+    background-image: url(/images/Pandilleros.PNG);
+    background-size: 100%;
+    overflow-x: hidden;
+}
+
+main{
+    height: 255.4vh;
+}
+
+section{
+    margin: 10vh;
+}
+
+    /* ##Inicio## */
+
+.inicio{
+    height: 50vh;
+}
+
+    /* ##Fin De Inicio## */
+
+    /* ##Galería## */
+
+.galeria{
+    height: 50vh;
+}
+
+.imagenes{
+    display: flex;
+    position: relative;
+}
+
+.slider{
+    display: flex;
+    animation: 20s slide infinite linear;
+}
+
+.izquierda{
+    position: absolute;
+    top: 0;
+    left: -11vw;
+    margin-top: 5.47vh;
+    width: 13vw;
+    height: 41vh;
+    background: linear-gradient(to left, var(--Transparente), var(--GrisGaleria));
+    content: "";
+    z-index: 2;
+}
+
+.derecha{
+    position: absolute;
+    top: 0;
+    left: 117.18vw;
+    margin-top: 5.47vh;
+    width: 13vw;
+    height: 41vh;
+    background: linear-gradient(to right, var(--Transparente), var(--GrisGaleria));
+    content: "";
+    z-index: 2;
+}
+
+.slider img{
+    flex: 1 0 auto;
+    margin-top: 5.47vh;
+    margin-left: 1.30vw;
+    margin-right: 1.30vw;
+    width: 13vw;
+    height: 41vh;
+}
+
+/*#Animación#*/
+@keyframes slide{
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+    /* ##Fin De Galería## */
+
+    /* ##Reparaciones## */
+
+.reparaciones{
+    height: 50vh;
+    width: 90vw;
+}
+
+button{
+    border-radius: 2vh;
+    height: 20vh;
+    width: 30vw;
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7vh;
+    color: var(--Blanco);
+    background-color: var(--Negro);
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 30vw;
+    height: 20vh;
+    background: linear-gradient(
+        45deg,
+        var(--DoradoMetalico), var(--Morado), var(--RojoTitulo), var(--Morado),
+        var(--DoradoMetalico), var(--Morado), var(--RojoTitulo), var(--Morado)
+    );
+    background-size: 800%;
+    border-radius: 2vh;
+    filter: blur(8px);
+    animation: glowing 40s linear infinite;
+}
+
+@keyframes glowing {
+    0%{
+        background-position: 0 0;
+    }
+
+    50%{
+        background-position: 400% 0;
+    }
+    
+    100%{
+        background-position: 0 0;
+    }
+}
+
+.botones{
+    height: 50vh;
+    gap: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    /* ##Fin De Reparaciones## */
+
+    /* ##Contacto## */
+
+.contacto{
+    height: 40vh;
+}
+
+.contenedor{
+    height: 40vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta{
+    width: 60vw;
+    height: 40vh;
+    background-color: var(--inside);
+    border-radius: 2vh;
+    box-shadow: 16px 14px 20px var(--sombra);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta::before{
+    content: "";
+    position: absolute;
+    height: 21vh;
+    width: 130vh;
+    background-image: conic-gradient(var(--Morado) 20deg, transparent 150deg);
+    animation: rotar 1.5s linear infinite;
+}
+
+@keyframes rotar{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+.tarjeta::after{
+    content: "";
+    position: absolute;
+    height: 38vh;
+    width: 59vw;
+    background-color: var(--inside);
+    border-radius: 2vh;
+    box-shadow: inset 16px 14px 20px var(--sombra);
+}
+
+.tarjetacontenido{
+    z-index: 2;
+    font-family: "Chela One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.73vh;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: var(--Negro);
+    color: var(--Blanco);
+    margin: 5vh;
+}
+
+    /* ##Fin De Contacto## */
+
+h2{
+    font-size: 5.47vh;
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+h3{
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5.47vh;
+    color: var(--Blanco);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: var(--Negro);
+    margin: 2vh;
+}
+
+p{
+    font-family: "Chela One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.73vh;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: var(--Negro);
+    color: var(--Blanco);
+    margin-left: 10vh;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+}
+    /* ##Fin Del Body## */
+
+    /* ##Footer## */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: var(--Negro);
+    color: var(--Blanco);
+}
+
+    /* ##Fin Del Footer## */
+
+@media (max-width: 768px) {
+    html{
+        max-height: 250vh;
+    }
+
+    header {
+        height: 15vh;
+    }
+
+    .titulo {
+        font-size: 6vh;
+    }
+
+    nav {
+        height: auto;
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 3.5vh;
+        padding: 1.5vh 2vh;
+    }
+
+    .menu-vertical {
+        width: 80%;
+        margin-top: 2vh;
+        height: auto;
+    }
+
+    body {
+        background-image: none;
+        background-size: cover;
+        background-color: var(--Negro);
+    }
+
+    main {
+        height: 250vh;
+        width: 80vw;
+    }
+
+    section {
+        margin: 5vh;
+    }
+
+    .inicio {
+        height: auto;
+    }
+
+    .galeria {
+        height: auto;
+    }
+
+    .imagenes {
+        gap: 2vw;
+    }
+
+    .slider img {
+        width: 30vw;
+        height: auto;
+    }
+
+    .derecha{
+        width: 20vw;
+    }
+
+    .izquierda{
+        width: 20vw;
+    }
+
+    .reparaciones {
+        width: 100%;
+    }
+
+    button {
+        height: auto;
+        width: 80%;
+        font-size: 5vh;
+    }
+
+    .botones {
+        flex-wrap: wrap;
+        gap: 10vh;
+    }
+
+    .contacto {
+        height: auto;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .tarjeta {
+        width: 90%;
+        height: auto;
+    }
+
+    .tarjetacontenido {
+        font-size: 2.2vh;
+    }
+
+    h2, h3 {
+        font-size: 4vh;
+    }
+
+    p {
+        font-size: 2vh;
+        margin-left: 5vh;
+        margin-top: 1vh;
+        margin-bottom: 2vh;
+    }
+
+    footer {
+        height: auto;
+        padding: 2vh;
+        text-align: center;
+    }
+}
+    
